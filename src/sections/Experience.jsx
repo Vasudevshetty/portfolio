@@ -1,17 +1,18 @@
 // Experience section with timeline/cards
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const experiences = [
   {
-    title: 'NetApp (Intern)',
-    period: '2024 - Present',
-    description: 'Working on cloud-native solutions and DevOps automation.'
+    title: "NetApp (Intern)",
+    period: "2024 - Present",
+    description: "Working on cloud-native solutions and DevOps automation.",
   },
   {
-    title: 'Freelance/Side Projects',
-    period: '2023 - Present',
-    description: 'Building full-stack apps and DevOps pipelines for startups and personal projects.'
-  }
+    title: "Freelance/Side Projects",
+    period: "2023 - Present",
+    description:
+      "Building full-stack apps and DevOps pipelines for startups and personal projects.",
+  },
 ];
 
 export default function Experience() {
@@ -38,7 +39,9 @@ export default function Experience() {
               className="bg-white rounded-2xl shadow p-6 flex flex-col md:flex-row md:items-center gap-4 hover:shadow-lg transition"
             >
               <div className="flex-1">
-                <div className="text-lg font-semibold text-blue-700">{exp.title}</div>
+                <div className="text-lg font-semibold text-blue-700">
+                  {exp.title}
+                </div>
                 <div className="text-gray-500 text-sm mb-2">{exp.period}</div>
                 <div className="text-gray-700">{exp.description}</div>
               </div>

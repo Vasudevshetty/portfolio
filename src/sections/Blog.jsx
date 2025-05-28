@@ -1,22 +1,23 @@
 // Blog/Articles placeholder section
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const blogs = [
   {
-    title: 'How AI is Transforming DevOps',
-    summary: 'Exploring the intersection of AI and DevOps automation.',
-    link: '#'
+    title: "How AI is Transforming DevOps",
+    summary: "Exploring the intersection of AI and DevOps automation.",
+    link: "#",
   },
   {
-    title: 'Getting Started with Kubernetes',
-    summary: 'A beginner-friendly guide to deploying your first app on Kubernetes.',
-    link: '#'
+    title: "Getting Started with Kubernetes",
+    summary:
+      "A beginner-friendly guide to deploying your first app on Kubernetes.",
+    link: "#",
   },
   {
-    title: 'CI/CD with GitHub Actions',
-    summary: 'Automate your deployments and testing with GitHub Actions.',
-    link: '#'
-  }
+    title: "CI/CD with GitHub Actions",
+    summary: "Automate your deployments and testing with GitHub Actions.",
+    link: "#",
+  },
 ];
 
 export default function Blog() {
@@ -42,9 +43,16 @@ export default function Blog() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="bg-blue-50 rounded-2xl shadow p-6 hover:shadow-lg transition"
             >
-              <div className="text-lg font-semibold text-gray-900 mb-2">{blog.title}</div>
+              <div className="text-lg font-semibold text-gray-900 mb-2">
+                {blog.title}
+              </div>
               <div className="text-gray-700 text-sm mb-4">{blog.summary}</div>
-              <a href={blog.link} className="text-blue-600 hover:underline text-sm font-medium">Read More</a>
+              <a
+                href={blog.link}
+                className="text-blue-600 hover:underline text-sm font-medium"
+              >
+                Read More
+              </a>
             </motion.div>
           ))}
         </div>

@@ -1,5 +1,5 @@
 // About Me section with short bio
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
@@ -21,7 +21,12 @@ export default function About() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-lg text-gray-700 bg-blue-50 rounded-2xl p-6 shadow"
         >
-          I’m an aspiring Software Developer, currently an intern at NetApp. I specialize in building and deploying full-stack MERN applications using modern DevOps practices like Docker, Kubernetes, Helm, and GitHub Actions. I'm also building an AI-powered DevOps Coach & Infrastructure Builder that automates infrastructure deployment and teaches DevOps best practices.
+          I’m an aspiring Software Developer, currently an intern at NetApp. I
+          specialize in building and deploying full-stack MERN applications
+          using modern DevOps practices like Docker, Kubernetes, Helm, and
+          GitHub Actions. I'm also building an AI-powered DevOps Coach &
+          Infrastructure Builder that automates infrastructure deployment and
+          teaches DevOps best practices.
         </motion.p>
       </div>
     </section>

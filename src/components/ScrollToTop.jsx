@@ -1,5 +1,5 @@
 // ScrollToTop component for smooth scrolling to top on route/section change
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 export default function ScrollToTop() {
   useEffect(() => {
@@ -8,12 +8,12 @@ export default function ScrollToTop() {
       if (hash) {
         const el = document.querySelector(hash);
         if (el) {
-          el.scrollIntoView({ behavior: 'smooth' });
+          el.scrollIntoView({ behavior: "smooth" });
         }
       }
     };
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
   return null;
 }

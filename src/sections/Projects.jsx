@@ -1,28 +1,31 @@
 // Projects section with modern card layout and Framer Motion effects
-import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { motion } from "framer-motion";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
   {
-    name: 'AI DevOps Coach & Infrastructure Builder',
-    description: 'Smart assistant to teach and build DevOps pipelines and infrastructure.',
-    tech: ['OpenAI', 'Docker', 'Kubernetes', 'GitHub Actions', 'React'],
-    github: '#',
-    demo: '#',
+    name: "AI DevOps Coach & Infrastructure Builder",
+    description:
+      "Smart assistant to teach and build DevOps pipelines and infrastructure.",
+    tech: ["OpenAI", "Docker", "Kubernetes", "GitHub Actions", "React"],
+    github: "#",
+    demo: "#",
   },
   {
-    name: 'MERN Stack E-Commerce Platform',
-    description: 'Includes user management, cart/wishlist, admin dashboard, and GitHub-integrated CI/CD.',
-    tech: ['MongoDB', 'Express', 'React', 'Node.js', 'GitHub Actions'],
-    github: '#',
-    demo: '#',
+    name: "MERN Stack E-Commerce Platform",
+    description:
+      "Includes user management, cart/wishlist, admin dashboard, and GitHub-integrated CI/CD.",
+    tech: ["MongoDB", "Express", "React", "Node.js", "GitHub Actions"],
+    github: "#",
+    demo: "#",
   },
   {
-    name: 'IoT Dashboard with ESP8266',
-    description: 'Real-time sensor monitoring (DHT & LDR) over Wi-Fi with a web dashboard.',
-    tech: ['ESP8266', 'React', 'Node.js', 'WebSockets'],
-    github: '#',
-    demo: '#',
+    name: "IoT Dashboard with ESP8266",
+    description:
+      "Real-time sensor monitoring (DHT & LDR) over Wi-Fi with a web dashboard.",
+    tech: ["ESP8266", "React", "Node.js", "WebSockets"],
+    github: "#",
+    demo: "#",
   },
 ];
 
@@ -49,16 +52,39 @@ export default function Projects() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="bg-blue-50 rounded-2xl shadow-lg p-6 flex flex-col gap-4 hover:shadow-2xl transition group"
             >
-              <div className="text-xl font-semibold text-gray-900 mb-2">{project.name}</div>
-              <div className="text-gray-700 text-sm mb-2">{project.description}</div>
+              <div className="text-xl font-semibold text-gray-900 mb-2">
+                {project.name}
+              </div>
+              <div className="text-gray-700 text-sm mb-2">
+                {project.description}
+              </div>
               <div className="flex flex-wrap gap-2 mb-4">
-                {project.tech.map(t => (
-                  <span key={t} className="bg-white rounded-xl px-3 py-1 text-xs text-blue-600 font-semibold shadow-sm">{t}</span>
+                {project.tech.map((t) => (
+                  <span
+                    key={t}
+                    className="bg-white rounded-xl px-3 py-1 text-xs text-blue-600 font-semibold shadow-sm"
+                  >
+                    {t}
+                  </span>
                 ))}
               </div>
               <div className="flex gap-4 mt-auto">
-                <a href={project.github} target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 text-lg"><FaGithub /></a>
-                <a href={project.demo} target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 text-lg"><FaExternalLinkAlt /></a>
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-blue-600 text-lg"
+                >
+                  <FaGithub />
+                </a>
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-blue-600 text-lg"
+                >
+                  <FaExternalLinkAlt />
+                </a>
               </div>
             </motion.div>
           ))}
