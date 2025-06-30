@@ -7,6 +7,7 @@ The V+S logo represents the fusion of **Vasudev** and **Singh** initials, where 
 ## 🎨 Visual Design Specifications
 
 ### Core Design Elements
+
 - **Letter V**: Formed by two clean diagonal lines meeting at a sharp point
 - **Letter S**: Flowing serpentine curve that gracefully connects to and completes the V
 - **Heart Formation**: The negative space and curve interaction creates a subtle heart shape
@@ -14,6 +15,7 @@ The V+S logo represents the fusion of **Vasudev** and **Singh** initials, where 
 - **Scalable Vector**: Designed to work from 16px favicon to large displays
 
 ### Geometric Specifications
+
 ```
 Logo Dimensions:
 - Width: 100 units
@@ -42,31 +44,34 @@ Intersection Design:
 ## 🎨 Color Specifications
 
 ### Primary Version (Dark Background)
+
 ```css
 /* Logo Colors */
---logo-primary: #FFFFFF;           /* Pure white lines */
+--logo-primary: #ffffff; /* Pure white lines */
 --logo-glow: rgba(88, 166, 255, 0.6); /* Electric blue glow */
---logo-shadow: rgba(0, 0, 0, 0.8);     /* Deep shadow */
+--logo-shadow: rgba(0, 0, 0, 0.8); /* Deep shadow */
 
 /* Background */
---logo-bg: #0D1117;                /* Deep charcoal background */
+--logo-bg: #0d1117; /* Deep charcoal background */
 ```
 
 ### Secondary Version (Light Backgrounds)
+
 ```css
 /* Logo Colors */
---logo-primary: #0D1117;           /* Deep charcoal lines */
+--logo-primary: #0d1117; /* Deep charcoal lines */
 --logo-glow: rgba(124, 58, 237, 0.4); /* Purple glow */
---logo-shadow: rgba(0, 0, 0, 0.2);     /* Light shadow */
+--logo-shadow: rgba(0, 0, 0, 0.2); /* Light shadow */
 
 /* Background */
---logo-bg: #FFFFFF;                /* White background */
+--logo-bg: #ffffff; /* White background */
 ```
 
 ### Monochrome Version
+
 ```css
 /* High contrast version for small sizes */
---logo-primary: #FFFFFF;
+--logo-primary: #ffffff;
 --logo-bg: #000000;
 /* No glow effects for maximum readability */
 ```
@@ -74,12 +79,13 @@ Intersection Design:
 ## 🎭 Animation Specifications
 
 ### Loading Animation - "Formation"
+
 ```javascript
 // Framer Motion animation sequence
 const logoFormation = {
   initial: {
     pathLength: 0,
-    opacity: 0
+    opacity: 0,
   },
   animate: {
     pathLength: 1,
@@ -87,49 +93,50 @@ const logoFormation = {
     transition: {
       duration: 2,
       ease: "easeInOut",
-      staggerChildren: 0.3
-    }
-  }
-}
+      staggerChildren: 0.3,
+    },
+  },
+};
 
 // V appears first (left, then right diagonal)
 const vAnimation = {
   initial: { pathLength: 0 },
-  animate: { 
+  animate: {
     pathLength: 1,
-    transition: { duration: 0.8, ease: "easeOut" }
-  }
-}
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
 
 // S flows in like a snake
 const sAnimation = {
   initial: { pathLength: 0, opacity: 0 },
-  animate: { 
+  animate: {
     pathLength: 1,
     opacity: 1,
-    transition: { 
-      duration: 1.2, 
+    transition: {
+      duration: 1.2,
       ease: "easeInOut",
-      delay: 0.5
-    }
-  }
-}
+      delay: 0.5,
+    },
+  },
+};
 
 // Glow effect appears last
 const glowAnimation = {
   initial: { opacity: 0, scale: 0.8 },
-  animate: { 
+  animate: {
     opacity: 1,
     scale: 1,
-    transition: { 
+    transition: {
       duration: 0.5,
-      delay: 1.8
-    }
-  }
-}
+      delay: 1.8,
+    },
+  },
+};
 ```
 
 ### Hover Animation - "Pulse"
+
 ```javascript
 const hoverAnimation = {
   hover: {
@@ -137,23 +144,24 @@ const hoverAnimation = {
     filter: "brightness(1.2)",
     transition: {
       duration: 0.3,
-      ease: "easeOut"
-    }
-  }
-}
+      ease: "easeOut",
+    },
+  },
+};
 
 // Glow intensifies on hover
 const hoverGlow = {
   hover: {
     boxShadow: "0 0 30px rgba(88, 166, 255, 0.8)",
     transition: {
-      duration: 0.3
-    }
-  }
-}
+      duration: 0.3,
+    },
+  },
+};
 ```
 
 ### Loading State - "Serpent Flow"
+
 ```javascript
 // Continuous animation for loading states
 const serpentFlow = {
@@ -164,39 +172,43 @@ const serpentFlow = {
       rotate: {
         duration: 8,
         ease: "linear",
-        repeat: Infinity
+        repeat: Infinity,
       },
       scale: {
         duration: 2,
         ease: "easeInOut",
-        repeat: Infinity
-      }
-    }
-  }
-}
+        repeat: Infinity,
+      },
+    },
+  },
+};
 ```
 
 ## 📏 Size Variations
 
 ### Favicon (16x16px)
+
 - Simplified version with thicker lines (6 units)
 - No glow effects
 - High contrast monochrome only
 - Simplified S curve for clarity
 
 ### Small (32x32px to 64x64px)
+
 - Standard thickness (4 units)
 - Subtle glow effect
 - Full color version
 - Slightly simplified S curve
 
 ### Medium (64x64px to 256x256px)
+
 - Full detail version
 - Complete glow and shadow effects
 - All animation capabilities
 - Perfect curve definition
 
 ### Large (256px+)
+
 - Maximum detail
 - Enhanced glow effects
 - Complex animations supported
@@ -205,13 +217,14 @@ const serpentFlow = {
 ## 💻 Implementation Code
 
 ### React Component Structure
+
 ```jsx
 // Logo.jsx
-const Logo = ({ 
-  size = 64, 
-  variant = 'primary', 
+const Logo = ({
+  size = 64,
+  variant = "primary",
   animated = false,
-  className = '' 
+  className = "",
 }) => {
   return (
     <motion.div
@@ -222,11 +235,7 @@ const Logo = ({
       animate="animate"
       whileHover="hover"
     >
-      <svg
-        viewBox="0 0 100 80"
-        fill="none"
-        className="logo-svg"
-      >
+      <svg viewBox="0 0 100 80" fill="none" className="logo-svg">
         {/* V Formation */}
         <motion.path
           d="M20 70 L50 10 L80 70"
@@ -236,7 +245,7 @@ const Logo = ({
           strokeLinejoin="round"
           variants={vAnimation}
         />
-        
+
         {/* S Curve */}
         <motion.path
           d="M25 45 Q35 25 45 35 Q55 45 65 30"
@@ -246,27 +255,25 @@ const Logo = ({
           fill="none"
           variants={sAnimation}
         />
-        
+
         {/* Glow Effect */}
-        <motion.g
-          variants={glowAnimation}
-          className="logo-glow"
-        >
+        <motion.g variants={glowAnimation} className="logo-glow">
           <filter id="glow">
-            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-            <feMerge> 
-              <feMergeNode in="coloredBlur"/>
-              <feMergeNode in="SourceGraphic"/> 
+            <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+            <feMerge>
+              <feMergeNode in="coloredBlur" />
+              <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
         </motion.g>
       </svg>
     </motion.div>
-  )
-}
+  );
+};
 ```
 
 ### CSS Styles
+
 ```css
 .logo-container {
   display: inline-block;
@@ -284,7 +291,7 @@ const Logo = ({
 }
 
 .logo-container.monochrome {
-  color: #FFFFFF;
+  color: #ffffff;
   filter: none;
 }
 
@@ -317,6 +324,7 @@ const Logo = ({
 ## 📋 Usage Guidelines
 
 ### Preferred Contexts
+
 1. **Navigation Header**: Medium size (48-64px) with subtle hover animation
 2. **Hero Section**: Large size (120-200px) with full formation animation
 3. **Footer**: Small size (32-40px) static version
@@ -324,6 +332,7 @@ const Logo = ({
 5. **Loading Screen**: Medium size with serpent flow animation
 
 ### Brand Protection
+
 - Maintain minimum clear space of 0.5x logo width on all sides
 - Never stretch or distort the proportions
 - Always use provided color combinations
@@ -331,6 +340,7 @@ const Logo = ({
 - Ensure sufficient contrast with background
 
 ### File Formats
+
 - **Web Use**: SVG (preferred), PNG with transparency
 - **Print**: Vector EPS, high-res PNG (300 DPI)
 - **Development**: React component, SVG sprites

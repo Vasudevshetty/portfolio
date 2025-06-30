@@ -5,6 +5,7 @@
 This folder contains all development documentation, design decisions, and project planning materials.
 
 ### Files Overview:
+
 - `project-plan.md` - Complete project roadmap and specifications
 - `design-system.md` - Color palettes, typography, and component guidelines
 - `component-architecture.md` - Component structure and organization
@@ -36,6 +37,7 @@ npm run preview
 ```
 
 ## 🔗 Quick Links
+
 - [Project Plan](./project-plan.md)
 - [Design System](./design-system.md)
 - [Component Architecture](./component-architecture.md)

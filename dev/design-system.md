@@ -1,45 +1,48 @@
 # 🎨 Design System - Digital Shadows Theme
 
 ## 🎯 Design Philosophy
+
 The "Digital Shadows" theme embodies modern minimalism with high-tech aesthetics, creating depth through strategic use of shadows, glows, and subtle animations while maintaining exceptional readability and accessibility.
 
 ## 🌈 Color System
 
 ### Primary Palette
+
 ```css
 /* Background Colors */
---bg-primary: #0D1117;      /* Main background - Deep space black */
---bg-secondary: #161B22;    /* Card backgrounds - Slightly lighter */
---bg-tertiary: #21262D;     /* Elevated elements - Button hover states */
---bg-quaternary: #30363D;   /* Input fields and borders */
+--bg-primary: #0d1117; /* Main background - Deep space black */
+--bg-secondary: #161b22; /* Card backgrounds - Slightly lighter */
+--bg-tertiary: #21262d; /* Elevated elements - Button hover states */
+--bg-quaternary: #30363d; /* Input fields and borders */
 
 /* Accent Colors */
---accent-primary: #58A6FF;    /* Electric blue - Primary actions */
---accent-secondary: #7C3AED;  /* Neon purple - Secondary highlights */
---accent-success: #3FB950;    /* Success green - Positive feedback */
---accent-warning: #FFA657;    /* Warning orange - Caution states */
---accent-error: #F85149;      /* Error red - Negative feedback */
+--accent-primary: #58a6ff; /* Electric blue - Primary actions */
+--accent-secondary: #7c3aed; /* Neon purple - Secondary highlights */
+--accent-success: #3fb950; /* Success green - Positive feedback */
+--accent-warning: #ffa657; /* Warning orange - Caution states */
+--accent-error: #f85149; /* Error red - Negative feedback */
 
 /* Text Colors */
---text-primary: #FFFFFF;      /* Headings and important text */
---text-secondary: #F0F6FC;    /* Body text and descriptions */
---text-tertiary: #C9D1D9;     /* Secondary information */
---text-muted: #8B949E;        /* Placeholder and disabled text */
---text-accent: #58A6FF;       /* Links and interactive text */
+--text-primary: #ffffff; /* Headings and important text */
+--text-secondary: #f0f6fc; /* Body text and descriptions */
+--text-tertiary: #c9d1d9; /* Secondary information */
+--text-muted: #8b949e; /* Placeholder and disabled text */
+--text-accent: #58a6ff; /* Links and interactive text */
 
 /* Border Colors */
---border-primary: #30363D;    /* Default borders */
---border-secondary: #21262D;  /* Subtle dividers */
---border-accent: #58A6FF;     /* Active/focus borders */
---border-muted: #21262D;      /* Inactive borders */
+--border-primary: #30363d; /* Default borders */
+--border-secondary: #21262d; /* Subtle dividers */
+--border-accent: #58a6ff; /* Active/focus borders */
+--border-muted: #21262d; /* Inactive borders */
 ```
 
 ### Gradient Definitions
+
 ```css
 /* Background Gradients */
---gradient-primary: linear-gradient(135deg, #0D1117 0%, #161B22 100%);
---gradient-card: linear-gradient(145deg, #161B22 0%, #21262D 100%);
---gradient-button: linear-gradient(135deg, #58A6FF 0%, #7C3AED 100%);
+--gradient-primary: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+--gradient-card: linear-gradient(145deg, #161b22 0%, #21262d 100%);
+--gradient-button: linear-gradient(135deg, #58a6ff 0%, #7c3aed 100%);
 
 /* Glow Effects */
 --glow-blue: 0 0 20px rgba(88, 166, 255, 0.3);
@@ -57,30 +60,32 @@ The "Digital Shadows" theme embodies modern minimalism with high-tech aesthetics
 ## 🔤 Typography System
 
 ### Font Families
+
 ```css
 /* Primary Font Stack */
---font-primary: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+--font-primary: "Inter", "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
 
 /* Monospace Font Stack */
---font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, monospace;
+--font-mono: "JetBrains Mono", "Fira Code", "SF Mono", Consolas, monospace;
 
 /* Display Font Stack (for logos/headlines) */
---font-display: 'Inter Tight', 'SF Pro Display', sans-serif;
+--font-display: "Inter Tight", "SF Pro Display", sans-serif;
 ```
 
 ### Type Scale
+
 ```css
 /* Font Sizes */
---text-xs: 0.75rem;    /* 12px - Small captions */
---text-sm: 0.875rem;   /* 14px - Meta information */
---text-base: 1rem;     /* 16px - Body text */
---text-lg: 1.125rem;   /* 18px - Large body */
---text-xl: 1.25rem;    /* 20px - Small headings */
---text-2xl: 1.5rem;    /* 24px - Section titles */
---text-3xl: 1.875rem;  /* 30px - Page headings */
---text-4xl: 2.25rem;   /* 36px - Hero titles */
---text-5xl: 3rem;      /* 48px - Display */
---text-6xl: 3.75rem;   /* 60px - Large display */
+--text-xs: 0.75rem; /* 12px - Small captions */
+--text-sm: 0.875rem; /* 14px - Meta information */
+--text-base: 1rem; /* 16px - Body text */
+--text-lg: 1.125rem; /* 18px - Large body */
+--text-xl: 1.25rem; /* 20px - Small headings */
+--text-2xl: 1.5rem; /* 24px - Section titles */
+--text-3xl: 1.875rem; /* 30px - Page headings */
+--text-4xl: 2.25rem; /* 36px - Hero titles */
+--text-5xl: 3rem; /* 48px - Display */
+--text-6xl: 3.75rem; /* 60px - Large display */
 
 /* Line Heights */
 --leading-tight: 1.25;
@@ -100,6 +105,7 @@ The "Digital Shadows" theme embodies modern minimalism with high-tech aesthetics
 ```
 
 ### Typography Classes
+
 ```css
 /* Heading Styles */
 .heading-display {
@@ -174,27 +180,29 @@ The "Digital Shadows" theme embodies modern minimalism with high-tech aesthetics
 ## 📏 Spacing System
 
 ### Spacing Scale
+
 ```css
 /* Spacing Variables */
 --space-0: 0;
---space-1: 0.25rem;   /* 4px */
---space-2: 0.5rem;    /* 8px */
---space-3: 0.75rem;   /* 12px */
---space-4: 1rem;      /* 16px */
---space-5: 1.25rem;   /* 20px */
---space-6: 1.5rem;    /* 24px */
---space-8: 2rem;      /* 32px */
---space-10: 2.5rem;   /* 40px */
---space-12: 3rem;     /* 48px */
---space-16: 4rem;     /* 64px */
---space-20: 5rem;     /* 80px */
---space-24: 6rem;     /* 96px */
---space-32: 8rem;     /* 128px */
---space-40: 10rem;    /* 160px */
---space-48: 12rem;    /* 192px */
+--space-1: 0.25rem; /* 4px */
+--space-2: 0.5rem; /* 8px */
+--space-3: 0.75rem; /* 12px */
+--space-4: 1rem; /* 16px */
+--space-5: 1.25rem; /* 20px */
+--space-6: 1.5rem; /* 24px */
+--space-8: 2rem; /* 32px */
+--space-10: 2.5rem; /* 40px */
+--space-12: 3rem; /* 48px */
+--space-16: 4rem; /* 64px */
+--space-20: 5rem; /* 80px */
+--space-24: 6rem; /* 96px */
+--space-32: 8rem; /* 128px */
+--space-40: 10rem; /* 160px */
+--space-48: 12rem; /* 192px */
 ```
 
 ### Component Spacing Guidelines
+
 ```css
 /* Section Spacing */
 .section-padding {
@@ -229,6 +237,7 @@ The "Digital Shadows" theme embodies modern minimalism with high-tech aesthetics
 ## 🎭 Animation Principles
 
 ### Timing Functions
+
 ```css
 /* Easing Curves */
 --ease-linear: linear;
@@ -247,6 +256,7 @@ The "Digital Shadows" theme embodies modern minimalism with high-tech aesthetics
 ```
 
 ### Animation Patterns
+
 ```css
 /* Hover Transitions */
 .hover-lift {
@@ -283,6 +293,7 @@ The "Digital Shadows" theme embodies modern minimalism with high-tech aesthetics
 ## 🧩 Component Design Patterns
 
 ### Card Components
+
 ```css
 .card-primary {
   background: var(--gradient-card);
@@ -308,6 +319,7 @@ The "Digital Shadows" theme embodies modern minimalism with high-tech aesthetics
 ```
 
 ### Button Components
+
 ```css
 .button-primary {
   background: var(--gradient-button);
@@ -343,6 +355,7 @@ The "Digital Shadows" theme embodies modern minimalism with high-tech aesthetics
 ```
 
 ### Input Components
+
 ```css
 .input-primary {
   background: var(--bg-tertiary);
@@ -369,6 +382,7 @@ The "Digital Shadows" theme embodies modern minimalism with high-tech aesthetics
 ## 📱 Responsive Design Tokens
 
 ### Breakpoint-Specific Spacing
+
 ```css
 /* Mobile Spacing */
 @media (max-width: 768px) {
@@ -376,7 +390,7 @@ The "Digital Shadows" theme embodies modern minimalism with high-tech aesthetics
     padding-top: var(--space-12);
     padding-bottom: var(--space-12);
   }
-  
+
   .container-padding {
     padding-left: var(--space-4);
     padding-right: var(--space-4);
@@ -389,7 +403,7 @@ The "Digital Shadows" theme embodies modern minimalism with high-tech aesthetics
     padding-top: var(--space-32);
     padding-bottom: var(--space-32);
   }
-  
+
   .container-padding {
     padding-left: var(--space-8);
     padding-right: var(--space-8);
@@ -398,17 +412,18 @@ The "Digital Shadows" theme embodies modern minimalism with high-tech aesthetics
 ```
 
 ### Typography Responsive Scale
+
 ```css
 /* Responsive Typography */
 @media (max-width: 768px) {
   .heading-display {
     font-size: var(--text-4xl);
   }
-  
+
   .heading-hero {
     font-size: var(--text-3xl);
   }
-  
+
   .heading-section {
     font-size: var(--text-xl);
   }
@@ -418,11 +433,11 @@ The "Digital Shadows" theme embodies modern minimalism with high-tech aesthetics
   .heading-display {
     font-size: var(--text-6xl);
   }
-  
+
   .heading-hero {
     font-size: var(--text-5xl);
   }
-  
+
   .heading-section {
     font-size: var(--text-3xl);
   }
@@ -432,16 +447,19 @@ The "Digital Shadows" theme embodies modern minimalism with high-tech aesthetics
 ## ♿ Accessibility Guidelines
 
 ### Color Contrast
+
 - All text must meet WCAG AA standards (4.5:1 contrast ratio)
 - Interactive elements should have clear focus indicators
 - Error states should not rely solely on color
 
 ### Motion & Animation
+
 - Respect `prefers-reduced-motion` media query
 - Provide pause/stop controls for continuous animations
 - Keep animations under 5 seconds for attention compliance
 
 ### Keyboard Navigation
+
 - All interactive elements must be keyboard accessible
 - Focus indicators should be clearly visible
 - Tab order should be logical and intuitive

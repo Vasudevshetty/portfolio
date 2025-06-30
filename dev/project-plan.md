@@ -1,11 +1,13 @@
 # 📋 Vasudev's Portfolio - Complete Project Plan
 
 ## 🎯 Vision Statement
+
 Create a cutting-edge portfolio website that breaks away from traditional templates with innovative layouts, smooth animations, and a distinctive dark aesthetic that showcases technical excellence and creative vision.
 
 ## 🛠 Technical Specifications
 
 ### Core Technologies
+
 - **Framework**: React 18 with Vite
 - **Styling**: Tailwind CSS 4.0
 - **Animations**: Framer Motion 12.15+
@@ -14,38 +16,41 @@ Create a cutting-edge portfolio website that breaks away from traditional templa
 - **Build Tool**: Vite 6.0+
 
 ### Additional Dependencies (To Install)
+
 ```json
 {
   "react-helmet-async": "^2.0.4",
-  "lucide-react": "^0.400.0",
   "class-variance-authority": "^0.7.0",
   "clsx": "^2.1.1",
   "tailwind-merge": "^2.3.0"
 }
 ```
 
+**Note**: React Icons (v5.5.0) is already installed and will be used for all iconography!
+
 ## 🎨 Design Theme: "Digital Shadows"
 
 ### Color Palette
+
 ```css
 :root {
   /* Primary Colors */
-  --bg-primary: #0D1117;      /* Deep charcoal */
-  --bg-secondary: #161B22;    /* Midnight blue */
-  --bg-tertiary: #21262D;     /* Elevated surfaces */
-  
+  --bg-primary: #0d1117; /* Deep charcoal */
+  --bg-secondary: #161b22; /* Midnight blue */
+  --bg-tertiary: #21262d; /* Elevated surfaces */
+
   /* Accent Colors */
-  --accent-blue: #58A6FF;     /* Electric blue */
-  --accent-purple: #7C3AED;   /* Neon purple */
-  --accent-green: #3FB950;    /* Success green */
-  --accent-red: #F85149;      /* Error red */
-  
+  --accent-blue: #58a6ff; /* Electric blue */
+  --accent-purple: #7c3aed; /* Neon purple */
+  --accent-green: #3fb950; /* Success green */
+  --accent-red: #f85149; /* Error red */
+
   /* Text Colors */
-  --text-primary: #FFFFFF;    /* Pure white */
-  --text-secondary: #F0F6FC;  /* Off white */
-  --text-muted: #9CA3AF;      /* Gray muted */
-  --text-accent: #58A6FF;     /* Link blue */
-  
+  --text-primary: #ffffff; /* Pure white */
+  --text-secondary: #f0f6fc; /* Off white */
+  --text-muted: #9ca3af; /* Gray muted */
+  --text-accent: #58a6ff; /* Link blue */
+
   /* Effects */
   --glow-blue: 0 0 20px rgba(88, 166, 255, 0.3);
   --glow-purple: 0 0 20px rgba(124, 58, 237, 0.3);
@@ -54,12 +59,14 @@ Create a cutting-edge portfolio website that breaks away from traditional templa
 ```
 
 ### Typography Scale
+
 - **Display**: 4xl - 6xl (Hero headings)
 - **Heading**: xl - 3xl (Section titles)
 - **Body**: sm - lg (Content text)
 - **Caption**: xs - sm (Meta information)
 
 ### Spacing System
+
 - **Micro**: 2px, 4px, 8px
 - **Small**: 12px, 16px, 20px, 24px
 - **Medium**: 32px, 40px, 48px
@@ -69,6 +76,7 @@ Create a cutting-edge portfolio website that breaks away from traditional templa
 ## 🏗 Component Architecture
 
 ### Directory Structure
+
 ```
 src/
 ├── components/
@@ -120,6 +128,7 @@ src/
 ## 🎭 Animation Strategy
 
 ### Framer Motion Patterns
+
 1. **Page Load**: Staggered reveal animations
 2. **Scroll Triggers**: Elements animate in as they come into view
 3. **Hover States**: Smooth scale, glow, and transform effects
@@ -127,6 +136,7 @@ src/
 5. **Interactive Elements**: Drag, gesture, and micro-interactions
 
 ### Animation Performance
+
 - Use `transform` and `opacity` for smooth animations
 - Implement `will-change` for performance-critical elements
 - Respect `prefers-reduced-motion` accessibility setting
@@ -135,6 +145,7 @@ src/
 ## 📱 Responsive Design Strategy
 
 ### Breakpoint System
+
 ```css
 /* Mobile First Approach */
 sm: '640px',    /* Small tablets */
@@ -145,6 +156,7 @@ xl: '1280px',   /* Desktops */
 ```
 
 ### Mobile Optimizations
+
 - Touch-friendly interactive elements (44px minimum)
 - Optimized image loading with WebP format
 - Reduced animation complexity on mobile
@@ -153,12 +165,14 @@ xl: '1280px',   /* Desktops */
 ## 🔍 SEO & Performance
 
 ### Meta Tags Strategy
+
 - Dynamic titles for each section
 - Comprehensive Open Graph tags
 - Twitter Card optimization
 - Structured data for rich snippets
 
 ### Performance Targets
+
 - **Lighthouse Score**: 95+ across all metrics
 - **First Contentful Paint**: < 1.5s
 - **Largest Contentful Paint**: < 2.5s
@@ -168,6 +182,7 @@ xl: '1280px',   /* Desktops */
 ## 🎯 Development Phases
 
 ### Phase 1: Foundation (Current)
+
 - [x] Project documentation
 - [ ] Install additional dependencies
 - [ ] Create V+S logo component
@@ -175,18 +190,21 @@ xl: '1280px',   /* Desktops */
 - [ ] Implement basic layout structure
 
 ### Phase 2: Core Sections
+
 - [ ] Hero section with animated logo
 - [ ] About section with interactive elements
 - [ ] Projects showcase with advanced hover effects
 - [ ] Skills visualization network
 
 ### Phase 3: Advanced Features
+
 - [ ] Complex Framer Motion animations
 - [ ] Particle systems and backgrounds
 - [ ] Interactive contact form
 - [ ] Custom cursor implementation
 
 ### Phase 4: Optimization & Deploy
+
 - [ ] SEO implementation with React Helmet
 - [ ] Performance optimizations
 - [ ] Cross-browser testing
@@ -196,6 +214,7 @@ xl: '1280px',   /* Desktops */
 ## 🎨 Unique Features
 
 ### Innovative Elements
+
 1. **Serpentine Logo**: Animated V+S forming a heart
 2. **Neural Network Skills**: Interconnected skill nodes
 3. **Particle Portal**: Interactive background system
@@ -205,6 +224,7 @@ xl: '1280px',   /* Desktops */
 7. **Signal Transmission**: Animated contact interactions
 
 ### Interactive Features
+
 - Custom cursor that adapts to content
 - Mouse-following particle effects
 - Gesture-based project navigation
@@ -215,12 +235,14 @@ xl: '1280px',   /* Desktops */
 ## 📈 Success Metrics
 
 ### Technical Goals
+
 - 100% Lighthouse Accessibility Score
 - < 3s loading time on 3G networks
 - 0 critical console errors
 - Cross-browser compatibility (Chrome, Firefox, Safari, Edge)
 
 ### User Experience Goals
+
 - Intuitive navigation flow
 - Engaging but not overwhelming animations
 - Clear call-to-action placement
@@ -229,6 +251,7 @@ xl: '1280px',   /* Desktops */
 ## 🚀 Deployment Strategy
 
 ### Build Process
+
 1. Optimize assets (images, fonts)
 2. Tree-shake unused code
 3. Minify and compress bundles
@@ -236,6 +259,7 @@ xl: '1280px',   /* Desktops */
 5. Create sitemap and robots.txt
 
 ### Hosting Options
+
 - **Primary**: Vercel (recommended for React/Vite)
 - **Alternative**: Netlify
 - **CDN**: Cloudflare for global distribution
