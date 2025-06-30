@@ -58,7 +58,7 @@ import {
   SiPostgresql,
   SiDocker,
   SiKubernetes,
-  SiAws,
+  SiAmazonwebservices,
   SiVercel,
   SiGit,
   SiVite,
