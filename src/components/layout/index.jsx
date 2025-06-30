@@ -127,7 +127,6 @@ const Grid = ({ children, cols = 1, gap = 6, className, ...props }) => {
     5: "grid-cols-1 md:grid-cols-3 lg:grid-cols-5",
     6: "grid-cols-1 md:grid-cols-3 lg:grid-cols-6",
   };
-
   const gridGap = {
     2: "gap-2",
     4: "gap-4",
@@ -135,7 +134,6 @@ const Grid = ({ children, cols = 1, gap = 6, className, ...props }) => {
     8: "gap-8",
     12: "gap-12",
   };
-
   return (
     <div
       className={cn("grid", gridCols[cols], gridGap[gap], className)}

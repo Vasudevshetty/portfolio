@@ -21,8 +21,7 @@ const VSLogo = ({
     xl: { width: 80, height: 80, strokeWidth: 4 },
     "2xl": { width: 120, height: 120, strokeWidth: 5 },
   };
-
-  const { width, height, strokeWidth } = sizeConfig[size];
+  const { width, height, strokeWidth } = sizeConfig[size] || sizeConfig["md"];
 
   // Animation variants
   const containerVariants = {

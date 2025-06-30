@@ -131,7 +131,7 @@ const Skills = () => {
           {/* Category Tabs */}
           <motion.div variants={itemVariants} className="flex justify-center">
             <div className="inline-flex bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-1">
-              {skills.categories.map((category, index) => {
+              {(skills?.categories ?? []).map((category, index) => {
                 const IconComponent = categoryIcons[category.name];
                 return (
                   <button
@@ -166,25 +166,27 @@ const Skills = () => {
             transition={{ duration: 0.5 }}
           >
             <Grid cols={4} gap={6}>
-              {skills.categories[activeCategory].skills.map((skill, index) => {
-                const IconComponent = skillIcons[skill.name] || FiLayers;
-                return (
-                  <motion.div
-                    key={skill.name}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <TechIcon
-                      icon={IconComponent}
-                      name={skill.name}
-                      proficiency={skill.level}
-                      showProficiency={true}
-                      className="h-full"
-                    />
-                  </motion.div>
-                );
-              })}
+              {(skills?.categories?.[activeCategory]?.skills ?? []).map(
+                (skill, index) => {
+                  const IconComponent = skillIcons[skill.name] || FiLayers;
+                  return (
+                    <motion.div
+                      key={skill.name}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <TechIcon
+                        icon={IconComponent}
+                        name={skill.name}
+                        proficiency={skill.level}
+                        showProficiency={true}
+                        className="h-full"
+                      />
+                    </motion.div>
+                  );
+                }
+              )}
             </Grid>
           </motion.div>
 
@@ -201,7 +203,7 @@ const Skills = () => {
             </div>
 
             <div className="flex flex-wrap justify-center gap-3">
-              {skills.soft.map((skill, index) => (
+              {(skills?.soft ?? []).map((skill, index) => (
                 <motion.div
                   key={skill}
                   initial={{ opacity: 0, scale: 0.8 }}

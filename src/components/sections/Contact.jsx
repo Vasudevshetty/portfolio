@@ -102,7 +102,7 @@ const Contact = () => {
     },
   ];
 
-  const socialLinks = [
+  const socialLinksList = [
     {
       icon: FiGithub,
       label: "GitHub",
@@ -264,7 +264,7 @@ const Contact = () => {
                 </Heading>
 
                 <div className="flex gap-4">
-                  {socialLinks.map((social, index) => (
+                  {socialLinksList.map((social, index) => (
                     <motion.a
                       key={social.label}
                       href={social.href}
