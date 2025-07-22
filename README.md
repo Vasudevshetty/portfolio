@@ -51,10 +51,20 @@ clear         # Clear terminal screen
 portfolio/
 ├── src/
 │   ├── app/
-│   │   ├── page.tsx          # Main terminal interface
+│   │   ├── page.tsx          # Main portfolio interface (modular)
 │   │   ├── layout.tsx        # Root layout with SEO
 │   │   └── globals.css       # Terminal theme styles
-│   └── ...
+│   ├── components/           # Modular UI components
+│   │   ├── Sidebar.tsx       # VS Code-style sidebar navigation
+│   │   ├── TabBar.tsx        # Tab management system
+│   │   ├── Terminal.tsx      # Interactive terminal component
+│   │   ├── FileExplorer.tsx  # File browser interface
+│   │   ├── FileViewer.tsx    # File content viewer
+│   │   └── Settings.tsx      # Theme and layout settings
+│   ├── data/
+│   │   └── portfolio.ts      # Centralized portfolio data
+│   └── utils/
+│       └── terminalCommands.ts # Terminal command logic
 ├── public/                   # Static assets
 ├── package.json             # Dependencies and scripts
 └── README.md               # This file
@@ -102,11 +112,14 @@ portfolio/
 
 ## 📊 Performance Features
 
+- **Modular Architecture**: Clean component separation for easy maintenance
 - **Server Components**: Optimized React 19 features
 - **Static Generation**: Pre-rendered for fast loading
 - **SEO Optimization**: Complete meta tags and structured data
 - **Accessibility**: WCAG compliant keyboard navigation
 - **Mobile Responsive**: Touch-friendly terminal interface
+- **Theme System**: Multiple terminal themes (Terminal Green, Matrix, Cyberpunk, Ocean)
+- **Layout Options**: VS Code, Full Terminal, Split View, and Minimal layouts
 
 ## 🛠️ Tech Stack
 

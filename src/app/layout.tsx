@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     title: "Vasudev D M - Full Stack Developer & Technology Officer",
     description:
       "Full Stack Developer and Technology Officer building scalable solutions with modern technologies. Winner of Hackfest 2025 National Hackathon.",
-    url: "https://vasudevshetty.dev",
+    url: "https://vasudevshetty.xyz",
     siteName: "Vasudev D M Portfolio",
     images: [
       {
@@ -96,7 +96,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
-        <link rel="canonical" href="https://vasudevshetty.dev" />
+        <link rel="canonical" href="https://vasudevshetty.xyz" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link
           rel="apple-touch-icon"
@@ -144,7 +144,7 @@ export default function RootLayout({
               jobTitle: "Full Stack Developer & Technology Officer",
               description:
                 "Full Stack Developer and Technology Officer at Fauxigent Innovations",
-              url: "https://vasudevshetty.dev",
+              url: "https://vasudevshetty.xyz",
               sameAs: [
                 "https://github.com/vasudevshetty",
                 "https://linkedin.com/in/vasudevshetty",
