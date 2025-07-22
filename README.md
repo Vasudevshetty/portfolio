@@ -207,7 +207,7 @@ NEXT_PUBLIC_SITE_URL=https://vasudevshetty.dev
 
 ## 📧 Contact
 
-- **Email**: vasudeepu2815@gmail.com
+- **Portfolio**: https://vasudevshetty.xyz
 - **GitHub**: [github.com/vasudevshetty](https://github.com/vasudevshetty)
 - **LinkedIn**: [linkedin.com/in/vasudevshetty](https://linkedin.com/in/vasudevshetty)
 - **LeetCode**: [leetcode.com/vasudevshetty](https://leetcode.com/vasudevshetty)
