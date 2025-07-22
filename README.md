@@ -1,36 +1,210 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vasudev D M - Terminal Portfolio 🚀
 
-## Getting Started
+A sophisticated terminal-themed portfolio website showcasing full-stack development skills with a VS Code-inspired interface.
 
-First, run the development server:
+## 🎯 Features
+
+### 🖥️ Terminal Experience
+
+- **Interactive Terminal Interface**: Full-featured terminal with command history
+- **VS Code-like Layout**: Professional IDE-inspired design with sidebar and tabs
+- **Glass Morphism Effects**: Modern UI with backdrop blur and neon green accents
+- **Responsive Design**: Seamless experience across all devices
+
+### 💫 Technical Highlights
+
+- **Next.js 15** with App Router and TypeScript
+- **Framer Motion** for smooth animations and transitions
+- **Tailwind CSS** with custom terminal theme styling
+- **React Icons** for comprehensive iconography
+- **SEO Optimized** with structured data and meta tags
+
+### 📁 Portfolio Sections
+
+- **About**: Personal introduction and career overview
+- **Experience**: Professional roles and achievements
+- **Projects**: Featured projects with detailed descriptions
+- **Skills**: Technical expertise with visual categorization
+- **Education**: Academic background and achievements
+- **Contact**: Professional links and contact information
+
+## 🔧 Terminal Commands
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+help          # Show available commands
+ls            # List files and directories
+cat <file>    # Display file contents
+pwd           # Show current directory
+whoami        # Display user information
+skills        # Show technical skills overview
+projects      # List featured projects
+experience    # Show work experience
+education     # Display education details
+contact       # Show contact information
+tree          # Show directory structure
+clear         # Clear terminal screen
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🏗️ Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+portfolio/
+├── src/
+│   ├── app/
+│   │   ├── page.tsx          # Main terminal interface
+│   │   ├── layout.tsx        # Root layout with SEO
+│   │   └── globals.css       # Terminal theme styles
+│   └── ...
+├── public/                   # Static assets
+├── package.json             # Dependencies and scripts
+└── README.md               # This file
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Getting Started
 
-## Learn More
+1. **Clone the repository**
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   git clone https://github.com/vasudevshetty/portfolio.git
+   cd portfolio
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Install dependencies**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+3. **Start development server**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   npm run dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **Open browser**
+   Navigate to `http://localhost:3000`
+
+## 🎨 Design Philosophy
+
+### Terminal Aesthetic
+
+- **Background**: Neutral series (neutral-900, neutral-800)
+- **Primary Color**: Neon Green (#10b981)
+- **Accent Colors**: Terminal Blue (#00bfff), Terminal Purple (#bf00ff)
+- **Typography**: JetBrains Mono for authentic monospace feel
+
+### Interactive Elements
+
+- **Command History**: Persistent terminal session
+- **File System Navigation**: Browse portfolio content like files
+- **Real-time Feedback**: Immediate response to commands
+- **Keyboard Focus**: Accessible terminal interactions
+
+## 📊 Performance Features
+
+- **Server Components**: Optimized React 19 features
+- **Static Generation**: Pre-rendered for fast loading
+- **SEO Optimization**: Complete meta tags and structured data
+- **Accessibility**: WCAG compliant keyboard navigation
+- **Mobile Responsive**: Touch-friendly terminal interface
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS with custom themes
+- **Animations**: Framer Motion
+- **Icons**: React Icons (FontAwesome, Simple Icons)
+
+### Development
+
+- **Build Tool**: Next.js built-in bundler
+- **Linting**: ESLint with Next.js config
+- **Type Checking**: TypeScript strict mode
+- **Hot Reload**: Fast Refresh for development
+
+## 📈 SEO & Analytics
+
+### Search Engine Optimization
+
+- **Meta Tags**: Comprehensive title, description, keywords
+- **Open Graph**: Social media preview optimization
+- **Twitter Cards**: Enhanced social sharing
+- **Structured Data**: JSON-LD for rich search results
+- **Canonical URLs**: Proper indexing guidance
+
+## 🌟 Unique Features
+
+### Terminal Commands System
+
+- **File System Simulation**: Navigate portfolio like a real terminal
+- **Command History**: Persistent session with up/down arrow navigation
+- **Auto-completion**: Intelligent command suggestions
+- **Error Handling**: Helpful error messages for invalid commands
+
+### VS Code Integration
+
+- **Tab System**: Multiple content views with tab navigation
+- **Sidebar**: File explorer with portfolio sections
+- **Status Bar**: Current directory and user information
+- **Color Scheme**: Authentic dark theme with terminal colors
+
+## 📱 Mobile Experience
+
+- **Touch Optimized**: Finger-friendly terminal interface
+- **Virtual Keyboard**: Optimized input handling
+- **Gesture Support**: Swipe navigation between sections
+- **Responsive Layout**: Adaptive sidebar and content areas
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+```bash
+# Connect to Vercel
+vercel --prod
+
+# Environment variables
+NEXT_PUBLIC_SITE_URL=https://vasudevshetty.dev
+```
+
+## 📝 Portfolio Content
+
+### Featured Projects
+
+1. **DeployIO**: Intelligent Project Deployment Platform (95% Complete)
+2. **Voxalize**: Voice-driven SQL Chat Platform (Hackfest 2025 Winner)
+3. **StudySync**: AI-powered Learning Platform
+
+### Professional Experience
+
+- **Technology Officer** at Fauxigent Innovations (Sept 2024 - Present)
+- **Web Dev Lead** at Developer Student Club (Oct 2024 - Present)
+- **Technical Team Member** at Programming Community (Jan 2024 - Present)
+
+### Technical Skills
+
+- **Programming**: JavaScript, TypeScript, Python, Java, C, C++
+- **Web Development**: React.js, Next.js, Express.js, Node.js, FastAPI
+- **Databases**: MongoDB, PostgreSQL, MySQL, Redis
+- **Cloud & DevOps**: AWS, Docker, Kubernetes, GitHub Actions
+- **AI/ML**: LangChain, Hugging Face, OpenAI API, NumPy, Pandas
+
+## 📧 Contact
+
+- **Email**: vasudeepu2815@gmail.com
+- **GitHub**: [github.com/vasudevshetty](https://github.com/vasudevshetty)
+- **LinkedIn**: [linkedin.com/in/vasudevshetty](https://linkedin.com/in/vasudevshetty)
+- **LeetCode**: [leetcode.com/vasudevshetty](https://leetcode.com/vasudevshetty)
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+**Built with ❤️ by Vasudev D M**
+
+_Turning terminal commands into compelling portfolio experiences_
