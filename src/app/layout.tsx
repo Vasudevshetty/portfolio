@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -9,6 +10,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://vasudevshetty.xyz"),
   title: "Vasudev D M - Full Stack Developer & Technology Officer",
   description:
     "Full Stack Developer and Technology Officer at Fauxigent Innovations. Computer Science Engineering student with expertise in React, Node.js, Python, AI/ML, and DevOps. Winner of Hackfest 2025 National Hackathon.",
@@ -174,10 +176,8 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body
-        className={`${jetbrainsMono.variable} font-mono antialiased bg-neutral-900 text-green-400`}
-      >
-        {children}
+      <body className={`${jetbrainsMono.variable} font-mono antialiased`}>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
