@@ -1,30 +1,32 @@
-name: Deploy
+name: Deploy Static Portfolio
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: "20"
+          cache: "npm"
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Build project
+      - name: Build static files
         run: npm run build
 
-      - name: Deploy to server
+      - name: Deploy static files to server
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
@@ -35,8 +37,7 @@ jobs:
           ssh-keyscan -t rsa server.fauxigent.com >> ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
 
-          # Debug SSH connection
-          ssh -v vasudevshetty@server.fauxigent.com exit
+          # Deploy static files from 'out' directory (Next.js static export)
+          rsync -avz --delete out/ vasudevshetty@server.fauxigent.com:/var/www/vasudevshetty.xyz/
 
-          # Deploy files
-          scp -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -r dist/* vasudevshetty@server.fauxigent.com:/var/www/vasudevshetty.xyz
+          echo "✅ Static files deployed successfully to /var/www/vasudevshetty.xyz/"

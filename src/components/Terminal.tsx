@@ -17,6 +17,8 @@ const Terminal = () => {
   const [commandHistory, setCommandHistory] = useState<string[]>([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
   const [isMinimized, setIsMinimized] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [isFirstInteraction, setIsFirstInteraction] = useState(true);
   const inputRef = useRef<HTMLInputElement>(null);
   const terminalRef = useRef<HTMLDivElement>(null);
 
@@ -49,7 +51,36 @@ const Terminal = () => {
     }
   }, [history]);
 
-  const executeCommand = (cmd: string) => {
+  const executeCommand = async (cmd: string) => {
+    setIsProcessing(true);
+
+    // Show loading for first interaction
+    if (isFirstInteraction) {
+      setIsFirstInteraction(false);
+      const loadingEntry: CommandHistory = {
+        command: cmd,
+        output: (
+          <div className="flex items-center space-x-2 text-yellow-400">
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+              className="w-4 h-4 border-2 border-yellow-400 border-t-transparent rounded-full"
+            />
+            <span>Processing command...</span>
+          </div>
+        ),
+        timestamp: new Date(),
+      };
+
+      setHistory((prev) => [...prev, loadingEntry]);
+
+      // Simulate processing time for first interaction
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      // Remove loading entry
+      setHistory((prev) => prev.slice(0, -1));
+    }
+
     const trimmedCmd = cmd.trim().toLowerCase();
     const args = trimmedCmd.split(" ");
     const baseCmd = args[0];
@@ -398,12 +429,13 @@ const Terminal = () => {
     setHistory((prev) => [...prev, newEntry]);
     setCommandHistory((prev) => [...prev, cmd]);
     setHistoryIndex(-1);
+    setIsProcessing(false);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (command.trim()) {
-      executeCommand(command);
+    if (command.trim() && !isProcessing) {
+      await executeCommand(command);
       setCommand("");
     }
   };
@@ -524,8 +556,9 @@ const Terminal = () => {
             autoFocus
             spellCheck={false}
             autoComplete="off"
-            placeholder="Type a command..."
+            placeholder={isProcessing ? "Processing..." : "Type a command..."}
             aria-label="Terminal command input"
+            disabled={isProcessing}
           />
         </form>
       </div>
