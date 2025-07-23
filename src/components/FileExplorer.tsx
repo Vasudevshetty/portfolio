@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { FaFolder, FaFile, FaChevronRight } from "react-icons/fa";
 import { useState } from "react";
-
 interface FileExplorerProps {
   onFileClick: (file: string, content: string) => void;
 }

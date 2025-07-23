@@ -125,19 +125,23 @@ export default function Terminal({ isActive }: TerminalProps) {
       {/* Terminal Content */}
       <div
         ref={terminalRef}
-        className="flex-1 p-4 overflow-y-auto font-mono text-sm space-y-2 scrollbar-thin scrollbar-thumb-neutral-600 scrollbar-track-transparent"
+        className="flex-1 p-4 overflow-y-auto font-mono text-sm space-y-2 min-h-0"
+        style={{
+          scrollbarWidth: "thin",
+          scrollbarColor: "#404040 transparent",
+        }}
       >
         {/* Welcome Message */}
         {commands.length === 0 && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-emerald-400 mb-4"
+            className="text-emerald-400 mb-6"
           >
-            <div className="text-lg font-bold mb-2">
+            <div className="text-lg font-bold mb-2 neon-glow">
               Welcome to Vasudev&apos;s Portfolio Terminal
             </div>
-            <div className="text-neutral-300">
+            <div className="text-neutral-300 text-sm">
               Type &apos;help&apos; to see available commands or
               &apos;portfolio&apos; for an overview.
             </div>
@@ -154,31 +158,36 @@ export default function Terminal({ isActive }: TerminalProps) {
               exit={{ opacity: 0, y: -10 }}
               className="space-y-1"
             >
-              <div className="text-emerald-400">
-                <span className="text-neutral-500">{getPrompt()}</span>{" "}
-                {cmd.command}
+              <div className="text-emerald-400 flex items-center">
+                <span className="text-neutral-500 mr-2 font-medium">
+                  {getPrompt()}
+                </span>
+                <span className="terminal-command">{cmd.command}</span>
               </div>
-              <pre className="text-neutral-300 whitespace-pre-wrap leading-relaxed">
+              <div className="terminal-output whitespace-pre-wrap leading-relaxed pl-2 border-l-2 border-neutral-700/30 ml-2">
                 {cmd.output}
-              </pre>
+              </div>
             </motion.div>
           ))}
         </AnimatePresence>
 
         {/* Current Input */}
-        <div className="flex items-center text-emerald-400">
-          <span className="text-neutral-500 mr-2">{getPrompt()}</span>
+        <div className="flex items-center text-emerald-400 sticky bottom-0 bg-neutral-900/95 py-2 mt-4">
+          <span className="text-neutral-500 mr-2 font-medium">
+            {getPrompt()}
+          </span>
           <input
             ref={inputRef}
             type="text"
             value={currentCommand}
             onChange={(e) => setCurrentCommand(e.target.value)}
             onKeyDown={handleKeyDown}
-            className="flex-1 bg-transparent outline-none text-emerald-400 caret-emerald-400"
+            className="flex-1 bg-transparent outline-none text-emerald-400 caret-emerald-400 focus-ring"
             placeholder="Type a command..."
             autoComplete="off"
             spellCheck={false}
           />
+          <span className="terminal-cursor text-emerald-400 ml-1">█</span>
         </div>
       </div>
     </div>

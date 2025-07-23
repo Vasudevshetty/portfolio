@@ -8,25 +8,29 @@ export const executeCommand = (
 
   switch (cmd.toLowerCase()) {
     case "help":
-      return `Available commands:
-╭─────────────────────────────────────────────────╮
-│ help          Show this help message             │
-│ ls            List files and directories         │
-│ cat <file>    Display file contents              │
-│ pwd           Show current directory             │
-│ whoami        Display user information           │
-│ skills        Show technical skills              │
-│ projects      List featured projects             │
-│ experience    Show work experience               │
-│ education     Display education details          │
-│ contact       Show contact information           │
-│ tree          Show directory structure           │
-│ clear         Clear terminal screen              │
-│ theme         Change terminal theme              │
-│ layout        Switch terminal layout             │
-│ neofetch      Display system information         │
-│ portfolio     Open portfolio overview            │
-╰─────────────────────────────────────────────────╯`;
+      return `╭─────────────────────────────────────────────────╮
+│                Available Commands               │
+├─────────────────────────────────────────────────┤
+│ 📋 help          Show this help message         │
+│ 📁 ls            List files and directories     │
+│ 📄 cat <file>    Display file contents          │
+│ 📍 pwd           Show current directory         │
+│ 👤 whoami        Display user information       │
+│ 🚀 skills        Show technical skills overview │
+│ 💼 projects      List featured projects         │
+│ 🏢 experience    Show work experience           │
+│ 🎓 education     Display education details      │
+│ 📞 contact       Show contact information       │
+│ 🌳 tree          Show directory structure       │
+│ 🧹 clear         Clear terminal screen          │
+│ 🎨 theme         Change terminal theme          │
+│ 🔧 layout        Switch terminal layout         │
+│ 💻 neofetch      Display system information     │
+│ 📋 portfolio     Open portfolio overview        │
+╰─────────────────────────────────────────────────╯
+
+💡 Tip: Use arrow keys to navigate command history
+🔗 Live projects: deployio.tech | voxalize.fauxigent.com | anandbrothersmysuru.in | studysyncs.xyz`;
 
     case "pwd":
       return currentPath;
@@ -91,40 +95,53 @@ Portfolio: ${portfolioData.personal.portfolio}`;
 
     case "neofetch":
       return `
-    ╭─────────────────────────╮
-    │     Vasudev D M         │
-    ├─────────────────────────┤
-    │ OS: Portfolio Terminal  │
-    │ Host: vasudevshetty.xyz │
-    │ Kernel: Next.js 15      │
-    │ Uptime: ${portfolioData.experience[0].duration} │
-    │ Shell: zsh              │
-    │ Resolution: ∞x∞         │
-    │ Theme: Terminal Green   │
-    │ Icons: React Icons      │
-    │ CPU: Brain.exe          │
-    │ Memory: Unlimited       │
-    ╰─────────────────────────╯`;
+    ╭───────────────────────────────╮
+    │        ${portfolioData.personal.name.padEnd(19)} │
+    ├───────────────────────────────┤
+    │ 💻 OS: Portfolio Terminal     │
+    │ 🏠 Host: vasudevshetty.xyz    │
+    │ ⚡ Kernel: Next.js 15          │
+    │ ⏱️  Uptime: ${portfolioData.experience[0].duration.padEnd(17)} │
+    │ 🐚 Shell: zsh                 │
+    │ 📐 Resolution: ∞x∞            │
+    │ 🎨 Theme: Terminal Green      │
+    │ 🎯 Icons: React Icons         │
+    │ 🧠 CPU: Brain.exe             │
+    │ 💾 Memory: Unlimited          │
+    │ 🚀 Status: ${portfolioData.experience[0].position.padEnd(17)} │
+    │ 📍 Location: ${portfolioData.personal.location.padEnd(15)} │
+    ╰───────────────────────────────╯`;
 
     case "portfolio":
-      return `Welcome to Vasudev D M's Portfolio Terminal!
-
-🚀 Featured Projects:
+      return `╭─ PORTFOLIO OVERVIEW ─────────────────────────────╮
+│                                                   │
+│   Welcome to ${portfolioData.personal.name}'s Terminal!     │
+│                                                   │
+├─ 🚀 FEATURED PROJECTS ───────────────────────────┤
 ${portfolioData.projects
-  .map((p) => `   • ${p.name} - ${p.description} (${p.url})`)
+  .map(
+    (p) =>
+      `│ • ${p.name.padEnd(15)} - ${p.description.slice(0, 25).padEnd(25)} │`
+  )
   .join("\n")}
-
-💼 Current Role: ${portfolioData.experience[0].position} at ${
-        portfolioData.experience[0].company
-      }
-
-🎯 Key Achievements:
+│                                                   │
+├─ 💼 CURRENT ROLE ────────────────────────────────┤
+│ ${portfolioData.experience[0].position.padEnd(49)} │
+│ @ ${portfolioData.experience[0].company.padEnd(47)} │
+│                                                   │
+├─ 🎯 KEY ACHIEVEMENTS ────────────────────────────┤
 ${portfolioData.achievements
   .slice(0, 3)
-  .map((a) => `   • ${a}`)
+  .map((a) => `│ • ${a.slice(0, 45).padEnd(45)} │`)
   .join("\n")}
-
-Type 'help' for available commands or explore with 'ls' and 'cat'!`;
+│                                                   │
+├─ 📊 QUICK STATS ─────────────────────────────────┤
+│ 🏢 Experience: ${portfolioData.experience.length} positions             │
+│ 🚀 Projects: ${portfolioData.projects.length} featured projects       │
+│ 🎓 Education: Computer Science Engineering        │
+│ 📍 Location: ${portfolioData.personal.location.padEnd(31)} │
+│                                                   │
+╰─ Type 'help' for commands or 'ls' to explore! ──╯`;
 
     case "theme":
       return `Available themes:
@@ -243,49 +260,57 @@ const formatSkills = (): string => {
   return Object.entries(portfolioData.skills)
     .map(
       ([category, skills]) => `
-${category}:
-${"═".repeat(category.length + 1)}
+╭── ${category.toUpperCase()} ${"─".repeat(Math.max(0, 35 - category.length))}╮
 ${skills
   .map(
     (skill) =>
-      `${skill.name.padEnd(15)} ${"█".repeat(
+      `│ ${skill.name.padEnd(18)} [${"█".repeat(
         Math.floor(skill.proficiency / 10)
-      )}${"░".repeat(10 - Math.floor(skill.proficiency / 10))} ${
+      )}${"░".repeat(10 - Math.floor(skill.proficiency / 10))}] ${
         skill.proficiency
-      }%`
+      }% │`
   )
   .join("\n")}
-`
+╰${"─".repeat(42)}╯`
     )
-    .join("\n");
+    .join("\n\n");
 };
 
 const formatProjects = (): string => {
-  return portfolioData.projects
-    .map(
-      (project, index) => `
-${index + 1}. ${project.name} - ${project.description}
-   Status: ${project.status}
-   URL: ${project.url}
-   Tech: ${project.tech.join(", ")}
-`
-    )
-    .join("\n");
+  return `╭─ FEATURED PROJECTS ──────────────────────────────╮
+${portfolioData.projects
+  .map(
+    (project, index) => `│ ${(index + 1)
+      .toString()
+      .padStart(2, "0")}. ${project.name.padEnd(20)} │
+│     ${project.description.padEnd(40)} │
+│     🚀 Status: ${project.status.padEnd(28)} │
+│     🔗 URL: ${project.url.padEnd(32)} │
+│     ⚡ Tech: ${project.tech.join(", ").padEnd(29)} │
+├${"─".repeat(49)}┤`
+  )
+  .join("\n")}
+╰${"─".repeat(49)}╯`;
 };
 
 const formatExperience = (): string => {
   return portfolioData.experience
     .map(
       (exp) => `
-${exp.position} @ ${exp.company}
-${exp.duration} | ${exp.location}
-${exp.type ? `Type: ${exp.type}` : ""}
-
-Key Achievements:
-${exp.achievements.map((achievement) => `• ${achievement}`).join("\n")}
-`
+╭─ ${(exp.position + " @ " + exp.company).toUpperCase()} ${"─".repeat(
+        Math.max(0, 40 - (exp.position + " @ " + exp.company).length)
+      )}╮
+│ 📅 Duration: ${exp.duration.padEnd(30)} │
+│ 📍 Location: ${exp.location.padEnd(30)} │
+${exp.type ? `│ 💼 Type: ${exp.type.padEnd(34)} │` : ""}
+│                                          │
+│ 🏆 KEY ACHIEVEMENTS:                      │
+${exp.achievements
+  .map((achievement) => `│ • ${achievement.padEnd(37)} │`)
+  .join("\n")}
+╰${"─".repeat(40)}╯`
     )
-    .join("\n" + "─".repeat(60) + "\n");
+    .join("\n\n");
 };
 
 const formatEducation = (): string => {

@@ -22,6 +22,7 @@ export default function PortfolioTerminal() {
   const [currentView, setCurrentView] = useState("terminal");
   const [currentTheme, setCurrentTheme] = useState("terminal");
   const [currentLayout, setCurrentLayout] = useState("vscode");
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const [tabs, setTabs] = useState<Tab[]>([
     {
       id: "terminal-1",
@@ -118,27 +119,34 @@ export default function PortfolioTerminal() {
   };
 
   return (
-    <div className="h-screen bg-neutral-900 text-neutral-100 overflow-hidden font-mono">
+    <div className="h-screen w-screen bg-neutral-900 text-neutral-100 overflow-hidden font-mono flex flex-col">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="h-full flex"
+        transition={{ duration: 0.3 }}
+        className="flex-1 flex min-h-0"
       >
         {/* Sidebar */}
-        <Sidebar currentView={currentView} onViewChange={setCurrentView} />
+        {!isFullscreen && (
+          <Sidebar
+            currentView={currentView}
+            onViewChange={setCurrentView}
+            onFullscreenToggle={() => setIsFullscreen(!isFullscreen)}
+            isFullscreen={isFullscreen}
+          />
+        )}
 
         {/* Main Content Area */}
-        <div className="flex-1 flex">
+        <div className="flex-1 flex min-h-0">
           {/* Explorer Panel */}
           <AnimatePresence>
-            {currentView === "explorer" && (
+            {currentView === "explorer" && !isFullscreen && (
               <motion.div
                 initial={{ width: 0, opacity: 0 }}
                 animate={{ width: 280, opacity: 1 }}
                 exit={{ width: 0, opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                className="overflow-hidden"
+                transition={{ duration: 0.2 }}
+                className="overflow-hidden border-r border-neutral-700/50"
               >
                 <FileExplorer onFileClick={handleFileClick} />
               </motion.div>
@@ -146,7 +154,7 @@ export default function PortfolioTerminal() {
           </AnimatePresence>
 
           {/* Terminal/Content Area */}
-          <div className="flex-1 flex flex-col">
+          <div className="flex-1 flex flex-col min-h-0">
             {/* Tab Bar */}
             {currentView !== "settings" && (
               <TabBar
@@ -177,30 +185,34 @@ export default function PortfolioTerminal() {
       </motion.div>
 
       {/* Status Bar */}
-      <motion.div
-        initial={{ y: 30, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.5, duration: 0.3 }}
-        className="h-6 bg-emerald-500/10 border-t border-emerald-500/20 flex items-center justify-between px-4 text-xs"
-      >
-        <div className="flex items-center space-x-4">
-          <span className="text-emerald-400">● vasudev@portfolio</span>
-          <span className="text-neutral-400">~/portfolio</span>
-          <span className="text-neutral-500">Theme: {currentTheme}</span>
-        </div>
-        <div className="flex items-center space-x-4">
-          <span className="text-neutral-400">Layout: {currentLayout}</span>
-          <span className="text-neutral-500">Next.js 15</span>
-          <a
-            href="https://vasudevshetty.xyz"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-emerald-400 hover:text-emerald-300 transition-colors"
-          >
-            vasudevshetty.xyz
-          </a>
-        </div>
-      </motion.div>
+      {!isFullscreen && (
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.2 }}
+          className="h-6 bg-neutral-800/90 backdrop-blur-md border-t border-neutral-700/50 flex items-center justify-between px-4 text-xs flex-shrink-0"
+        >
+          <div className="flex items-center space-x-4">
+            <span className="text-emerald-400 font-medium">
+              ● vasudev@portfolio
+            </span>
+            <span className="text-neutral-400">~/portfolio</span>
+            <span className="text-neutral-500">Theme: {currentTheme}</span>
+          </div>
+          <div className="flex items-center space-x-4">
+            <span className="text-neutral-400">Layout: {currentLayout}</span>
+            <span className="text-neutral-500">Next.js 15</span>
+            <a
+              href="https://vasudevshetty.xyz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-emerald-400 hover:text-emerald-300 transition-colors font-medium"
+            >
+              vasudevshetty.xyz
+            </a>
+          </div>
+        </motion.div>
+      )}
     </div>
   );
 }

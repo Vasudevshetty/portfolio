@@ -22,26 +22,27 @@ export default function TabBar({
   onNewTab,
 }: TabBarProps) {
   return (
-    <div className="h-10 bg-neutral-800/80 backdrop-blur-md border-b border-neutral-700/50 flex items-center">
+    <div className="h-10 bg-neutral-800/90 backdrop-blur-md border-b border-neutral-700/50 flex items-center px-1 flex-shrink-0">
       <div className="flex items-center overflow-x-auto scrollbar-hide">
         {tabs.map((tab) => (
           <motion.div
             key={tab.id}
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className={`relative flex items-center min-w-0 max-w-48 ${
+            className={`relative flex items-center min-w-0 max-w-48 h-8 ${
               tab.isActive
-                ? "bg-neutral-900/90 text-emerald-400 border-b-2 border-emerald-500"
+                ? "bg-neutral-900/95 text-emerald-400 border-b-2 border-emerald-500"
                 : "bg-neutral-800/60 text-neutral-300 hover:bg-neutral-700/60"
-            } transition-all duration-200`}
+            } transition-all duration-200 rounded-t-md mx-0.5`}
           >
             <button
               onClick={() => onTabClick(tab.id)}
-              className="flex items-center px-3 py-2 text-sm truncate flex-1 min-w-0"
+              className="flex items-center px-3 py-1 text-xs truncate flex-1 min-w-0 h-full"
+              title={`${tab.title} - ${tab.path}`}
             >
-              <span className="truncate">{tab.title}</span>
+              <span className="truncate font-medium">{tab.title}</span>
               <span className="ml-2 text-xs text-neutral-500 hidden sm:inline">
-                {tab.path}
+                {tab.path.replace("/home/vasudev/", "~/")}
               </span>
             </button>
             {tabs.length > 1 && (
